@@ -91,6 +91,13 @@ const initGame = () => {
   playBoard.innerHTML = htmlMarkup;
 };
 
+function setAppHeight() {
+  const appHeight = window.innerHeight;
+  document.documentElement.style.setProperty('--app-height', `${appHeight}px`)
+}
+
 changeFoodPosition();
 setIntervalId = setInterval(initGame, 125);
+window.addEventListener("resize", setAppHeight);
+setAppHeight();
 document.addEventListener("keydown", changeDirection);
