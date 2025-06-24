@@ -8,12 +8,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: var(--app-height);
   font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
-  height: 100vh;
+  height: var(--app-height);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +74,7 @@ body {
     font-family: "Roboto", sans-serif;
   }
   .wrapper {
-    height: 100vh;
+    height: var(--app-height);
   }
 
   .game-display {
