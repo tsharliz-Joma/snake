@@ -81,4 +81,8 @@ body {
     padding: 15px 0px;
     font-size: 1rem;
   }
+  .play-board {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 }
