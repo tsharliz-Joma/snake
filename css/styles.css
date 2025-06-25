@@ -93,14 +93,14 @@ body {
       ".    up    ."
       "left center right"
       ".   down   .";
-    grid-template-columns: 50px 50px 50px;
-    grid-template-rows: 50px 50px 50px;
-    gap: 20px;
+    grid-template-columns: 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px;
+    gap: 10px;
   }
   .dpad-button {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background-color: #444;
     border-radius: 6%;
     cursor: pointer;
@@ -121,9 +121,9 @@ body {
     grid-area: up;
   }
   .up::before {
-    border-width: 20px 12px 20px 12px;
+    border-width: 10px 6px 10px 6px;
     border-color: transparent transparent #bbb transparent;
-    bottom: 24px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -131,9 +131,9 @@ body {
     grid-area: down;
   }
   .down::before {
-    border-width: 20px 12px 0px 12px;
+    border-width: 10px 6px 0px 6px;
     border-color: #bbb transparent transparent transparent;
-    top: 24px;
+    top: 16px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -141,9 +141,9 @@ body {
     grid-area: left;
   }
   .left::before {
-    border-width: 12px 20px 12px 0;
+    border-width: 6px 10px 6px 0;
     border-color: transparent #bbb transparent transparent;
-    left: 18px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -151,16 +151,16 @@ body {
     grid-area: right;
   }
   .right::before {
-    border-width: 12px 0 12px 20px;
+    border-width: 6px 0 6px 10px;
     border-color: transparent transparent transparent #bbb;
-    right: 18px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
   }
   .dpad-center {
     grid-area: center;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background-color: #555;
     border-radius: 50%;
     display: flex;
