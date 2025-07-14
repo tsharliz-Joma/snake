@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: var(--app-height);
-  font-family: "Roboto", sans-serif;
+  font-family: "Michroma", sans-serif;
   background-color: #293447;
 }
 
@@ -71,7 +71,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    font-family: "Roboto", sans-serif;
+    
   }
   .wrapper {
     height: var(--app-height);
