@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/6057a741cb.js"
+      crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,21 +16,42 @@
     <script src="/js/logic.js" defer></script>
   </head>
   <body>
+    <!-- Background grid layer -->
+    <div class="bg-grid"></div>
+
     <div class="wrapper">
+      <div> Snake on Neon </div>
+
       <div class="game-display">
         <div class="game-details">
           <span class="score"></span>
           <span class="high-score"></span>
+          <button class="restart" title="Restart"
+            ><i class="fa-solid fa-rotate"></i
+          ></button>
         </div>
+
+        <!-- Playboard -->
         <div class="play-board"></div>
+
         <div class="controls">
           <div class="gameboy-pad">
             <div class="dpad">
-              <i data-key="ArrowUp" class="dpad-button up"></i>
-              <i data-key="ArrowLeft" class="dpad-button left"></i>
-              <div class="dpad-center"></div>
-              <i data-key="ArrowRight" class="dpad-button right"></i>
-              <i data-key="ArrowDown" class="dpad-button down"></i>
+              <button data-key="ArrowUp" class="dpad-button up">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              <button data-key="ArrowLeft" class="dpad-button left">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <div class="dpad-center">
+                <i class="fa-regular fa-circle"></i>
+              </div>
+              <button data-key="ArrowRight" class="dpad-button right">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button data-key="ArrowDown" class="dpad-button down">
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
             </div>
           </div>
         </div>
