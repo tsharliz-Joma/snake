@@ -131,6 +131,7 @@ body {
   inset: 0;
   background-image: linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: calc(100% / 30) calc(100% / 30);
   opacity: 0.25;
   pointer-events: none;
 }
