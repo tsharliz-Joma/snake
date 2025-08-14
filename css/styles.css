@@ -56,6 +56,7 @@ body {
   padding-top: max(10px, env(safe-area-inset-top));
   padding-bottom: max(16px, env(safe-area-inset-bottom));
 }
+
 .bg-grid {
   position: fixed;
   inset: 0;
@@ -85,8 +86,8 @@ body {
 }
 
 .game-display {
-  width: min(900px, 96vw);
-
+  width: min(900px, 80vw);
+  max-width: min(600px, 80vw);
   border-radius: 25px;
   display: grid;
   grid-template-rows: auto 1fr auto;
