@@ -86,7 +86,7 @@ body {
 }
 
 .game-display {
-  width: min(430px, 100vw);
+   width: min(430px, 600px, 100vw);
   max-width: min(600px, 80vw);
   border-radius: 25px;
   display: grid;
