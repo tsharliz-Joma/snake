@@ -130,28 +130,24 @@ const initGame = () => {
       break;
     }
   }
-
-  // for (let i = 0; i < snakeBody.length; i++) {
-  //   // Adding a div for each part of the snake body
-  //   htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
-  //   if (
-  //     i !== 0 &&
-  //     snakeBody[0][1] === snakeBody[i][1] &&
-  //     snakeBody[0][0] === snakeBody[i][0]
-  //   ) {
-  //     gameOver = true;
-  //   }
-  // }
-  // playBoard.innerHTML = htmlMarkup;
 };
 
 function setAppHeight() {
-  const appHeight = window.innerHeight;
-  document.documentElement.style.setProperty("--app-height", `${appHeight}px`);
+  const vh =
+    window.visualViewport && window.visualViewport.height
+      ? window.visualViewport.height
+      : window.innerHeight;
+  document.documentElement.style.setProperty("--app-height", `${vh}px`);
 }
 
 changeFoodPosition();
 setIntervalId = setInterval(initGame, 125);
-window.addEventListener("resize", setAppHeight);
 setAppHeight();
+window.addEventListener("resize", setAppHeight);
+window.addEventListener("orientationchange", setAppHeight);
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", setAppHeight);
+  window.visualViewport.addEventListener("scroll", setAppHeight);
+}
 document.addEventListener("keydown", changeDirection);
+requestAnimationFrame(setAppHeight);
