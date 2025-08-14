@@ -186,9 +186,9 @@ body {
 .dpad-button {
   cursor: pointer;
 }
-.dpad button {
+.dpad i {
   color: var(--text);
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .dpad-button::before {
