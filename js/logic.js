@@ -22,6 +22,58 @@ let velocityY = 0;
 let snakeBody = [];
 let setIntervalId;
 
+function sizeBoard() {
+  const container = document.querySelector(".game-display");
+  const hud = document.querySelector(".game-details");
+  const controls = document.querySelector(".controls");
+
+  const cs = getComputedStyle(container);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+
+  const innerW = Math.floor(container.clientWidth - padX);
+  const innerH = Math.floor(
+    container.clientHeight -
+      padY -
+      (hud ? hud.offsetHeight : 0) -
+      (controls && getComputedStyle(controls).display !== "none"
+        ? controls.offsetHeight
+        : 0) -
+      16,
+  ); // small buffer
+
+  const square = Math.max(180, Math.min(innerW, innerH)); // avoid micro sizes
+  const cell = Math.max(6, Math.floor(square / 30)); // integer pixels per cell
+  const size = cell * 30;
+
+  document.documentElement.style.setProperty("--cell-size", `${cell}px`);
+  playBoard.style.width = `${size}px`;
+  playBoard.style.height = `${size}px`;
+}
+
+/* --- call it at the right times (mobile toolbars & fonts can shift height) --- */
+function sizeBoardAfterSettle() {
+  sizeBoard();
+  // re-run shortly after to catch iOS toolbar animation
+  setTimeout(sizeBoard, 250);
+}
+
+sizeBoardAfterSettle();
+window.addEventListener("resize", sizeBoardAfterSettle);
+window.addEventListener("orientationchange", sizeBoardAfterSettle);
+
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", sizeBoardAfterSettle);
+  window.visualViewport.addEventListener("scroll", sizeBoardAfterSettle);
+}
+
+/* fonts can change HUD height after load */
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(sizeBoardAfterSettle);
+}
+window.addEventListener("load", sizeBoardAfterSettle);
+window.addEventListener("pageshow", sizeBoardAfterSettle);
+
 const handleGameOver = () => {
   clearInterval(setIntervalId);
   playBoard.classList.add("flash");
