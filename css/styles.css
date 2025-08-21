@@ -98,6 +98,20 @@ body {
     0 60px 120px -40px #000;
 }
 
+/* .play-board {
+  width: calc(var(--cell-size) * 30);
+  height: calc(var(--cell-size) * 30);
+
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  background: radial-gradient(800px 400px at 50% 20%, #0b2732 0%, #0a1e27 70%),
+    linear-gradient(transparent, rgba(255, 255, 255, 0.02));
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 0 0 1px #0f3a48, 0 0 60px - 10px var(--neon-soft);
+  overflow: hidden;
+} */
+
 .game-details {
   color: #bbc6dc;
   font-size: 1rem;
@@ -130,8 +144,7 @@ body {
 }
 
 /* Board */
-
-/* .play-board {
+.play-board {
   width: 100%;
   aspect-ratio: 1/1;
   display: grid;
@@ -142,41 +155,15 @@ body {
   position: relative;
   box-shadow: 0 0 0 1px #0f3a48, 0 0 60px -10px var(--neon-soft);
   overflow: hidden;
-} */
-
-.play-board {
-  /* exact 30 × 30 grid in whole pixels */
-  width: calc(var(--cell-size) * 30);
-  height: calc(var(--cell-size) * 30);
-
-  display: grid;
-  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-  background: radial-gradient(800px 400px at 50% 20%, #0b2732 0%, #0a1e27 70%),
-    linear-gradient(transparent, rgba(255, 255, 255, 0.02));
-  border-radius: 20px;
-  position: relative;
-  box-shadow: 0 0 0 1px #0f3a48, 0 0 60px -10px var(--neon-soft);
-  overflow: hidden;
 }
 
-/* .play-board::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: calc(100% / 30) calc(100% / 30);
-  opacity: 0.25;
-  pointer-events: none;
-} */
 .play-board::after {
   content: "";
   position: absolute;
   inset: 0;
   background-image: linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: var(--cell-size) var(--cell-size); /* exact match */
-  background-position: 0 0, 0 0;
+  background-size: calc(100% / 30) calc(100% / 30);
   opacity: 0.25;
   pointer-events: none;
 }
