@@ -11,6 +11,7 @@
   --text: #cfe7ff;
   --muted: #96a9bd;
   --app-height: 100vh;
+  --cell-size: 12px;
 }
 
 * {
@@ -86,7 +87,7 @@ body {
 }
 
 .game-display {
-   width: min(430px, 600px, 100vw);
+  width: min(430px, 600px, 100vw);
   max-width: min(600px, 80vw);
   border-radius: 25px;
   display: grid;
@@ -96,7 +97,6 @@ body {
   box-shadow: 0 0 0 1px #103646 0 0 45px var(--neon-soft) inset,
     0 60px 120px -40px #000;
 }
-
 
 .game-details {
   color: #bbc6dc;
@@ -130,6 +130,23 @@ body {
 }
 
 /* Board */
+
+@media screen and (max-width: 430px) {
+  .play-board {
+    width: calc(var(--cell-size) * 30);
+    height: calc(var(--cell-size) * 30);
+
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    background: radial-gradient(800px 400px at 50% 20%, #0b2732 0%, #0a1e27 70%),
+      linear-gradient(transparent, rgba(255, 255, 255, 0.02));
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 0 1px #0f3a48, 0 0 60px - 10px var(--neon-soft);
+    overflow: hidden;
+  }
+}
+
 .play-board {
   width: 100%;
   aspect-ratio: 1/1;
