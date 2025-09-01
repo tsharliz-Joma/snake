@@ -8,7 +8,6 @@ const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
 const restartButton = document.querySelector(".restart");
-
 let score = 0;
 let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `High Score : ${highScore}`;
@@ -21,7 +20,6 @@ let velocityX = 0;
 let velocityY = 0;
 let snakeBody = [];
 let setIntervalId;
-
 
 const handleGameOver = () => {
   clearInterval(setIntervalId);
